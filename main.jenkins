@@ -11,17 +11,13 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("create docker image") {
+        stage("test linter") {
             steps {
-                echo " ============== start building image =================="
-                withCredentials([usernamePassword(credentialsId: 'dockerhub_morrison', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                echo " ============== start testing linter =================="
                         sh """
-                    	docker login -u $USERNAME -p $PASSWORD
-                    	docker build -t lizardkinggg/sentry:1.15.1 -f docker/Dockerfile .
-                    	docker push lizardkinggg/sentry:1.15.1
+			. ./testlinter.sh
                     	"""
     
-                }
             }   
         }
     }
