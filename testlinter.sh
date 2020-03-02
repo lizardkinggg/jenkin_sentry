@@ -1,9 +1,8 @@
 #!/bin/bash
 curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
-echo "10.16.3" > .nvmrc
 export NVM_DIR="/var/lib/jenkins/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
+export VERSION=10.16.3
 source /var/lib/jenkins/foo/bin/activate
 
 echo "added variables"
