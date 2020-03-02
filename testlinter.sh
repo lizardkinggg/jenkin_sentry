@@ -3,7 +3,8 @@
 #curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
 #export NVM_DIR="/var/lib/jenkins/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-source /fooo/bin/activate
+
+source /var/lib/jenkins/getsentry/sentry/fooo/bin/activate
 
 echo "added variables"
 
