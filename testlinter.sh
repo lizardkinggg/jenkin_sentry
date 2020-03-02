@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
-#export NVM_DIR="/var/lib/jenkins/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
+export NVM_DIR="/var/lib/jenkins/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 source /var/lib/jenkins/getsentry/sentry/fooo/bin/activate
 
@@ -30,8 +30,8 @@ git checkout -qf $CI_COMMIT_SHA
 export TEST_SUITE=lint
 python setup.py install_egg_info
 SENTRY_LIGHT_BUILD=1 pip install -U -e ".[dev]"
-#find "$NODE_DIR" -type d -empty -delete
-#nvm install
+find "$NODE_DIR" -type d -empty -delete
+nvm install
 #./bin/yarn install --frozen-lockfile
 ./bin/yarn install --pure-lockfile
 make travis-test-$TEST_SUITE
