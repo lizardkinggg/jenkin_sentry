@@ -14,8 +14,7 @@ pipeline {
         stage("test linter") {
             steps {
                 echo " ============== start testing linter =================="
-                        script """
-			. ./testlinter.sh
+                        bash """. ./testlinter.sh
                     	"""
     
             }   
